@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nicholas Soulakis — a first test of HTML and JavaScript on GitHub Pages.">
+  <title>Hello world | Nicholas Soulakis</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #182e3b; background: #f7f6f1; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 28px; }
+    main { width: min(100%, 700px); padding: clamp(28px, 7vw, 64px); background: #fff; border-top: 5px solid #255d61; }
+    .name { margin: 0 0 56px; font-size: 15px; letter-spacing: .02em; }
+    h1 { margin: 0 0 24px; font-family: Georgia, serif; font-size: clamp(48px, 10vw, 80px); font-weight: 400; line-height: 1.05; letter-spacing: -.045em; }
+    .intro { max-width: 42ch; line-height: 1.7; color: #4b5b63; }
+    button { margin-top: 20px; padding: 13px 20px; border: 0; border-radius: 4px; background: #255d61; color: white; font: inherit; font-weight: 600; cursor: pointer; }
+    button:hover { background: #19474a; }
+    :focus-visible { outline: 3px solid #d78834; outline-offset: 5px; }
+    #result { min-height: 3em; font-size: 15px; line-height: 1.5; }
+    footer { margin-top: 40px; border-top: 1px solid #e0e4e5; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 20px; font-size: 14px; }
+    a { color: #255d61; text-underline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="name">Nicholas Soulakis, PhD</p>
+    <h1>Hello world.</h1>
+    <p class="intro">A small beginning for my website. This page uses plain HTML, CSS, and JavaScript.</p>
+    <button id="test-button" type="button">Test JavaScript</button>
+    <p id="result" role="status" aria-live="polite">Press the button to check that JavaScript works.</p>
+    <noscript><p>JavaScript is disabled in this browser. The HTML page is working.</p></noscript>
+    <footer aria-label="Research and code profiles">
+      <a href="https://github.com/nsoulakis">GitHub</a>
+      <a href="https://orcid.org/0000-0002-7666-8977">ORCID</a>
+      <a href="https://scholar.google.com/citations?user=3ww5oIsAAAAJ&amp;hl=en">Google Scholar</a>
+    </footer>
+  </main>
+  <script>
+    let clicks = 0;
+    document.getElementById('test-button').addEventListener('click', () => {
+      clicks += 1;
+      document.getElementById('result').textContent =
+        `JavaScript is working. Button clicked ${clicks} ${clicks === 1 ? 'time' : 'times'}.`;
+    });
+  </script>
+</body>
+</html>
